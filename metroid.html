@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Metroid Recreation | Mitul Goel</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Mitul Goel's contributions to a Metroid recreation built in Unity for EECS 494 at the University of Michigan." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Project artwork: floats beside the overview on wide screens, full width on phones */
+			.project-art { width: 22em; max-width: 45%; border-radius: 0.5em; overflow: hidden; box-shadow: 0 0.75em 2em rgba(0, 0, 0, 0.35); }
+			.project-art img { display: block; width: 100%; }
+			@media screen and (max-width: 736px) {
+				.image.left.project-art { float: none; display: block; width: 100%; max-width: 100%; margin: 0 0 2em 0; }
+			}
+			.clear { clear: both; }
+
+			/* Contributions list: bold title with a short paragraph under it */
+			ul.contributions li { margin-bottom: 1.25em; }
+			ul.contributions li p { margin: 0.25em 0 0 0; }
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Mitul Goel</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="index.html#games">Games</a></li>
+						<li><a href="metroid.html" class="active">Metroid</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Metroid Recreation</h1>
+
+							<span class="image left project-art"><img src="images/metroid.jpg" alt="Pixel art of Samus from Metroid" /></span>
+
+							<h2>Project Overview</h2>
+							<p>The first major project in EECS 494: Video Game Design and Implementation at the University of Michigan is recreating part of a classic NES game. My team chose the opening area of Nintendo's 1986 <em>Metroid</em>, aiming to match the original's feel, enemy behavior, and room-to-room flow as closely as possible.</p>
+							<p>We also designed an original level built around a new mechanic: a Celeste-style eight-way air dash that makes Samus briefly invincible, so players can dash through enemies and across gaps.</p>
+							<p>The game was made in Unity using C#.</p>
+
+							<div class="clear"></div>
+
+							<h2>My Contributions</h2>
+							<ul class="contributions">
+								<li>
+									<strong>Zoomer AI</strong>
+									<p>I implemented the Zoomer, an enemy that crawls along any wall, floor, or ceiling. It uses raycasts to detect inside and outside corners and rotates around them, and I later extended it to crawl in either direction, with every turn mirrored to match.</p>
+								</li>
+								<li>
+									<strong>Reo AI</strong>
+									<p>I built the Reo as a state machine (hover, dive, skim, and rise) so that it swoops down at the player, skims along the floor, and retreats upward when Samus jumps, recreating the original's attack pattern.</p>
+								</li>
+								<li>
+									<strong>Screen-Edge Enemy Behavior</strong>
+									<p>To match the NES original, I made enemies treat the edges of the camera view as walls. Zoomers, Reos, and Rippers turn around when they reach the edge of the screen, while enemies outside the view are left unaffected.</p>
+								</li>
+								<li>
+									<strong>Door Behavior</strong>
+									<p>I extended the door system so that doors close again after the player passes through, or after a short delay if they don't. Both halves of a doorway open together while the camera scrolls to the next room and close once the transition finishes, and doors never close while Samus is standing in them.</p>
+								</li>
+								<li>
+									<strong>Morph Ball Controls</strong>
+									<p>I refined the Morph Ball controls so that pressing jump while rolled up returns Samus to standing, the same as pressing up, without triggering a jump.</p>
+								</li>
+								<li>
+									<strong>Bug Fixing and Polish</strong>
+									<p>As features from across the team were integrated, I tracked down and fixed bugs throughout the game, including a physics warning during room transitions and a door state that prevented doors from being reopened.</p>
+								</li>
+							</ul>
+
+							<h2>Built With</h2>
+							<p>Unity, C#, Unity physics (raycasts and rigidbodies), and Git.</p>
+
+							<h2>Play the Game</h2>
+							<ul class="actions">
+								<li><a href="https://gomitul.itch.io/metroid-nes-eecs-494" target="_blank" rel="noopener" class="button primary">Play on itch.io</a></li>
+								<li><a href="index.html#games" class="button">Back to portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Mitul Goel. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

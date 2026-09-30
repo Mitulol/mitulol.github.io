@@ -13,10 +13,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Contributions list: bold title with a short paragraph under it */
-			ul.contributions li { margin-bottom: 1.25em; }
-			ul.contributions li p { margin: 0.25em 0 0 0; }
-
 			/* Desktop: fixed-size project image (matches the Samus artwork's shape) that no longer stretches with the text.
 			   It sits beside the project title and stays in view (sticky) while the text scrolls past. */
 			@media screen and (min-width: 981px) {
@@ -86,47 +82,14 @@
 
 						<!-- Metroid (EECS 494, Project 1) -->
 						<section>
-							<a href="https://gomitul.itch.io/metroid-nes-eecs-494" target="_blank" rel="noopener" class="image"><img src="images/metroid.jpg" alt="Pixel art of Samus from Metroid" data-position="center center" /></a>
+							<a href="metroid.html" class="image"><img src="images/metroid.jpg" alt="Pixel art of Samus from Metroid" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2>Metroid Recreation</h2>
-									<p><strong>EECS 494: Video Game Design and Implementation, Project 1.</strong>
-									A team recreation of the opening area of Nintendo's 1986 <em>Metroid</em>, plus an original custom level
-									built around a new mechanic: a Celeste-style eight-way air dash that makes Samus briefly invincible,
-									so players can dash through enemies and across gaps.</p>
-
-									<h3>My contributions</h3>
-									<ul class="contributions">
-										<li>
-											<strong>Zoomer AI</strong>
-											<p>I implemented the Zoomer, an enemy that crawls along any wall, floor, or ceiling. It uses raycasts to detect inside and outside corners and rotates around them, and I later extended it to crawl in either direction, with every turn mirrored to match.</p>
-										</li>
-										<li>
-											<strong>Reo AI</strong>
-											<p>I built the Reo as a state machine (hover, dive, skim, and rise) so that it swoops down at the player, skims along the floor, and retreats upward when Samus jumps, recreating the original's attack pattern.</p>
-										</li>
-										<li>
-											<strong>Screen-Edge Enemy Behavior</strong>
-											<p>To match the NES original, I made enemies treat the edges of the camera view as walls. Zoomers, Reos, and Rippers turn around when they reach the edge of the screen, while enemies outside the view are left unaffected.</p>
-										</li>
-										<li>
-											<strong>Door Behavior</strong>
-											<p>I extended the door system so that doors close again after the player passes through, or after a short delay if they don't. Both halves of a doorway open together while the camera scrolls to the next room and close once the transition finishes, and doors never close while Samus is standing in them.</p>
-										</li>
-										<li>
-											<strong>Morph Ball Controls</strong>
-											<p>I refined the Morph Ball controls so that pressing jump while rolled up returns Samus to standing, the same as pressing up, without triggering a jump.</p>
-										</li>
-										<li>
-											<strong>Bug Fixing and Polish</strong>
-											<p>As features from across the team were integrated, I tracked down and fixed bugs throughout the game, including a physics warning during room transitions and a door state that prevented doors from being reopened.</p>
-										</li>
-									</ul>
-
-									<h3>Built with</h3>
-									<p>Unity, C#, Unity physics (raycasts and rigidbodies), and Git.</p>
-
+									<p><strong>EECS 494, Project 1.</strong> A team recreation of the opening area of Nintendo's 1986 <em>Metroid</em> in Unity, plus an original level built around a new eight-way air dash.</p>
+									<p>I built enemy AI (Zoomer, Reo, and screen-edge behavior), extended the door system, and polished controls across the game.</p>
 									<ul class="actions">
+										<li><a href="metroid.html" class="button">Learn more</a></li>
 										<li><a href="https://gomitul.itch.io/metroid-nes-eecs-494" target="_blank" rel="noopener" class="button primary">Play on itch.io</a></li>
 									</ul>
 								</div>
