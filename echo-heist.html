@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Echo Heist | Mitul Goel</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Echo Heist, a solo puzzle platformer by Mitul Goel built in Unity for EECS 494 at the University of Michigan." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Project artwork: floats beside the overview on wide screens, full width on phones */
+			.project-art { width: 22em; max-width: 45%; border-radius: 0.5em; overflow: hidden; box-shadow: 0 0.75em 2em rgba(0, 0, 0, 0.35); }
+			.project-art img { display: block; width: 100%; }
+			@media screen and (max-width: 736px) {
+				.image.left.project-art { float: none; display: block; width: 100%; max-width: 100%; margin: 0 0 2em 0; }
+			}
+			.clear { clear: both; }
+
+			/* Contributions list: bold title with a short paragraph under it */
+			ul.contributions li { margin-bottom: 1.25em; }
+			ul.contributions li p { margin: 0.25em 0 0 0; }
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Mitul Goel</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="index.html#games">Games</a></li>
+						<li><a href="metroid.html">Metroid</a></li>
+						<li><a href="echo-heist.html" class="active">Echo Heist</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Echo Heist</h1>
+
+							<span class="image left project-art"><img src="images/echo-heist.jpg" alt="Echo Heist: a yellow block jumps over spikes bridged by bodies, a laser, a pulley lift, and a glowing exit" /></span>
+
+							<h2>Project Overview</h2>
+							<p>The second project in EECS 494: Video Game Design and Implementation at the University of Michigan is a solo, two-week rapid prototype built around one new mechanic. Mine is <em>Echo Heist</em>, a puzzle platformer where every death leaves a body behind, and your past lives become the crew you need to pull off the heist.</p>
+							<p>Bodies are solid, heavy physics objects. They bridge spike pits, block laser beams, hold down pressure plates, and weigh down a counterweight lift. Each level only gives you a handful of lives, so every death is a decision: where you die matters as much as how you get through.</p>
+							<p>The game was made in Unity using C#.</p>
+
+							<div class="clear"></div>
+
+							<h2>My Contributions</h2>
+							<p>This was a solo project, so I was responsible for the design and implementation of the whole game.</p>
+							<ul class="contributions">
+								<li>
+									<strong>Core Mechanic: Bodies as Tools</strong>
+									<p>When the player dies, a body is left exactly where they fell. It rests flush on top of spikes so later lives can walk across it, stacks on other bodies, and can be stood on as a step to reach ledges too high to jump to. A limited body count per level turns each death into a resource to spend carefully.</p>
+								</li>
+								<li>
+									<strong>Puzzle Pieces</strong>
+									<p>I built spikes, lasers that stop at the first solid object they hit, pressure plates that open matching doors only while every plate on their channel is held, and a counterweight lift where bodies on one platform raise the other. The lift counts only weight actually resting on it, including stacked bodies, and the player counts too, which leads to "outweigh yourself" puzzles.</p>
+								</li>
+								<li>
+									<strong>Level Design</strong>
+									<p>I designed eight levels that introduce one idea at a time, from a first spike pit to a finale that combines every mechanic. I removed on-screen hint text in favor of levels that teach through their layout.</p>
+								</li>
+								<li>
+									<strong>Par and Medals</strong>
+									<p>Based on playtest feedback that spare bodies cost nothing, I added a par for each level: clearing at or under par earns gold, one over earns silver, and more earns bronze. Best results are saved and shown on the level select. While testing, I found that a quick player can leap off the rising lift before their own weight drags it back down, and I kept that as skill tech required for gold on the lift levels.</p>
+								</li>
+								<li>
+									<strong>Game Systems and Architecture</strong>
+									<p>Systems communicate only through a publish/subscribe event bus, which kept the death, body, audio, and UI systems fully decoupled. Levels are authored in the Unity editor with Tilemaps and prefabs, and each attempt plays on a fresh copy, so restarting a level always resets it cleanly.</p>
+								</li>
+								<li>
+									<strong>Menus, Audio, and Polish</strong>
+									<p>I added a title screen with a level select, a full game loop with an out-of-bodies retry and a victory screen with final time and medal tally, a looping chiptune soundtrack, and sound effects for jumping, dying, plates, and clearing or failing a level.</p>
+								</li>
+							</ul>
+
+							<h2>Built With</h2>
+							<p>Unity, C#, Unity 2D physics, Tilemaps, Unity UI, and a publish/subscribe event bus.</p>
+
+							<h2>Play the Game</h2>
+							<ul class="actions">
+								<li><a href="https://gomitul.itch.io/echo-heist" target="_blank" rel="noopener" class="button primary">Play on itch.io</a></li>
+								<li><a href="index.html#games" class="button">Back to portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Mitul Goel. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
